@@ -59,7 +59,7 @@ public class IntermediateOperationsTest {
     }
 
     @Test
-    void givenIntermediateOperations_whenRunAnIntermediateOperations_thenItShouldNot() {
+    void givenIntermediateOperations_whenPipelineFilterWithMap_thenItShouldNotRunAnyCodeInside() {
         countries.map(country -> {
             logger.info(country);
             return country.charAt(0);
@@ -69,5 +69,15 @@ public class IntermediateOperationsTest {
         });
         Mockito.verify(logger, Mockito.never())
                 .info(ArgumentMatchers.anyString());
+    }
+
+    @Test
+    void givenTerminalOperation_whenUsingWithIntermediateOperations_thenItWillRunTheCode() {
+        countries.filter(c -> c.startsWith("B")).map(c -> {
+            logger.info(c.toLowerCase());
+            return c.toLowerCase();
+        }).collect(Collectors.toList());
+        Mockito.verify(logger, Mockito.atLeast(1))
+                .info(ArgumentMatchers.eq("belgium"));
     }
 }
