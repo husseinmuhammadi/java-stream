@@ -2,6 +2,8 @@ package com.javastudio.tutorial;
 
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
 import java.util.List;
@@ -11,6 +13,13 @@ import java.util.stream.Stream;
 import static org.junit.Assert.*;
 
 public class ApplicationTest {
+
+    private static final Logger logger = LoggerFactory.getLogger(ApplicationTest.class);
+
+    @Test
+    public void name1() {
+        logger.info("JJJJJJJJJJJJJJJJJJ");
+    }
 
     @Test
     public void stream_basics() {

@@ -19,7 +19,7 @@
     </properties>
 
     <modules>
-        <module>intermediate-operations</module>
+        <module>java-stream-overview</module>
     </modules>
 
     <build>
