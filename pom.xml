@@ -7,9 +7,6 @@
     <groupId>com.javastudio.tutorial.stream</groupId>
     <artifactId>java-stream-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <modules>
-        <module>intermediate-operations</module>
-    </modules>
     <packaging>pom</packaging>
 
     <properties>
@@ -20,6 +17,10 @@
         <junit.jupiter.version>5.5.2</junit.jupiter.version>
         <junit.platform.version>1.5.2</junit.platform.version>
     </properties>
+
+    <modules>
+        <module>intermediate-operations</module>
+    </modules>
 
     <build>
         <plugins>
@@ -42,21 +43,6 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.2.0</version>
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <addClasspath>true</addClasspath>
-                            <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>com.javastudio.tutorial.Application</mainClass>
-                        </manifest>
-                    </archive>
-                </configuration>
             </plugin>
 
             <plugin>
@@ -110,9 +96,9 @@
         </dependency>
 
         <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>1.2.3</version>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.25</version>
         </dependency>
     </dependencies>
 </project>
