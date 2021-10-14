@@ -17,11 +17,6 @@ public class ApplicationTest {
     private static final Logger logger = LoggerFactory.getLogger(ApplicationTest.class);
 
     @Test
-    public void name1() {
-        logger.info("JJJJJJJJJJJJJJJJJJ");
-    }
-
-    @Test
     public void stream_basics() {
         List<String> myList =
                 Arrays.asList("a1", "a2", "b1", "c2", "c1");
